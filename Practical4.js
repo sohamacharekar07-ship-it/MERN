@@ -1,4 +1,4 @@
-/* ===========================
+B question/* ===========================
    App.jsx
 =========================== */
 // Main App component passing data using props
@@ -113,3 +113,161 @@ function HotelCard(props) {
 }
 
 export default HotelCard;
+
+C Question
+import { useState } from "react";
+
+function App() {
+
+    // State Variable
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <h1>Button Click Counter</h1>
+
+            <hr />
+
+            <h2>User Clicks : {count} Times</h2>
+
+            <button onClick={() => setCount(count + 1)}>
+                Click Me
+            </button>
+            <h3>Soham Acharekar T001</h3>
+        </div>
+    );
+}
+
+export default App;
+
+D Question
+App.jsx
+import StudentForm from "./Components/StudentForm";
+function App() {
+    return (
+        <div>
+            <StudentForm />
+        </div>
+    );
+}
+export default App;
+StudentForm.jsx
+import { useState } from "react";
+function StudentForm() {
+    // State Variables
+    const [name, setName] = useState("");
+    const [rollNo, setRollNo] = useState("");
+    const [branch, setBranch] = useState("");
+    const [cgpa, setCgpa] = useState("");
+    return (
+        <div>
+            <h1>Student Registration Form</h1>
+            <hr />
+            <label>Student Name : </label>
+            <input
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+            />
+            <br />
+            <label>Roll Number : </label>
+            <input
+                type="text"
+                value={rollNo}
+                onChange={(e) => setRollNo(e.target.value)}
+            />
+            <br />
+            <label>Branch : </label>
+            <input
+                type="text"
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+            />
+            <br />
+            <label>CGPA : </label>
+            <input
+                type="text"
+                value={cgpa}
+                onChange={(e) => setCgpa(e.target.value)}
+            />
+            <hr />
+            <h2>Student Details</h2>
+            <h3>Name : {name}</h3>
+            <h3>Roll Number : {rollNo}</h3>
+            <h3>Branch : {branch}</h3>
+            <h3>CGPA : {cgpa}</h3>
+        </div>
+    );
+}
+export default StudentForm;
+
+
+E Question
+App.jsx
+import CompanyList from "./components/CompanyList";
+function App() {
+  return (
+    <div>
+      <CompanyList />
+    </div>
+  );
+}
+export default App;
+CompanyList.jsx
+import { useState } from "react";
+
+
+function CompanyList() {
+  const [companies] = useState([
+    "TCS",
+    "Infosys",
+    "Accenture",
+    "Wipro",
+    "Capgemini"
+  ]);
+  return (
+    <div>
+      <h1>Placement Companies</h1>
+      <hr />
+      <ul>
+        {companies.map((company, index) => (
+          <li key={index}>{company}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+export default CompanyList;
+
+
+F Question
+CODE:
+import { useState } from "react";
+function App() {
+  const [count, setCount] = useState(0);
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>React Counter Application</h1>
+      <hr />
+      <h2>Current Count: {count}</h2>
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>       
+        <button onClick={() => setCount(count + 1)}>
+          Increase
+        </button>
+        &nbsp;
+        <button 
+          onClick={() => setCount(count - 1)} 
+          disabled={count === 0}
+        >
+          Decrease
+        </button>
+        &nbsp;
+        <button onClick={() => setCount(0)}>
+          Reset
+        </button>
+        &nbsp;
+      </div>
+      <h4>Soham Acharekar T001</h4>
+    </div>
+  );
+}
+export default App;
