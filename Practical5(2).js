@@ -1,4 +1,4 @@
-D.
+//D. Fetch sample data from a public API using Axios.
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -24,7 +24,7 @@ function App() {
   }
 export default App;
 
-E.
+//E.Display fetched data in table or list format.
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -69,7 +69,7 @@ function App() {
 }
 export default App;
 
-F.
+//F.Implement search or filter functionality on displayed data.
 import axios from "axios";
 import { useEffect, useState } from "react";
 function App() {
